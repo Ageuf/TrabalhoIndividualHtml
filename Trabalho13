@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Árvore com Maçãs Interativas</title>
+<style>
+    
+    .tree-container {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        margin: 50px auto;
+        background-image: url('https://www.vishopper.com/images/products/650x650/PL/1206_cut-out-big-oak-tree.jpg'); 
+        background-size: cover;
+    }
+
+    
+    .apple {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    
+    .apple1 { top: 50px; left: 80px; }
+    .apple2 { top: 100px; left: 150px; }
+    .apple3 { top: 150px; left: 50px; }
+    .apple4 { top: 200px; left: 120px; }
+    .apple5 { top: 250px; left: 180px; }
+</style>
+</head>
+<body>
+
+<div class="tree-container">
+    
+    <div class="apple apple1" onclick="removeApple(event)"></div>
+    <div class="apple apple2" onclick="removeApple(event)"></div>
+    <div class="apple apple3" onclick="removeApple(event)"></div>
+    <div class="apple apple4" onclick="removeApple(event)"></div>
+    <div class="apple apple5" onclick="removeApple(event)"></div>
+</div>
+
+<script>
+    
+    function removeApple(event) {
+        event.target.style.display = 'none';  
+        alert("Você colheu uma maçã!");
+    }
+</script>
+
+</body>
+</html>
