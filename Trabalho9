@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio do Botão Pequeno</title>
+<style>
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        background-color: #f9f9f9;
+    }
+
+    
+    .tiny-button {
+        width: 20px;
+        height: 20px;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        position: absolute;
+    }
+
+    
+    #message {
+        position: absolute;
+        top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+
+<div class="container" onclick="showError()">
+    <button class="tiny-button" onclick="showSuccess(event)"></button>
+    <div id="message"></div>
+</div>
+
+<script>
+    
+    function showSuccess(event) {
+        event.stopPropagation();  
+        const message = document.getElementById('message');
+        message.textContent = "Sucesso! Você clicou no botão!";
+        message.style.color = "green";
+    }
+
+    
+    function showError() {
+        const message = document.getElementById('message');
+        message.textContent = "Erro! Você clicou fora do botão.";
+        message.style.color = "red";
+    }
+</script>
+
+</body>
+</html>
